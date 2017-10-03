@@ -22,4 +22,5 @@ Execute the following commands on your local machine for starting a new SDaccel 
 ```
 # 1. Desing Overiew
 
-The process for capturing an arbitrary RTL design as a Xilinx object file is as follows:
+DUT Overiew 
+![image](https://user-images.githubusercontent.com/32319498/31142684-e1b2e09c-a82f-11e7-9741-ce0f1c4ce054.png)
