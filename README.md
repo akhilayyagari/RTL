@@ -23,7 +23,8 @@ Execute the following commands on your local machine for starting a new SDaccel 
 # 1. Summary of Desing Overiew
 
 ## AES128 Encrypter and Decrpyter design overivew
-The first AES128 module takes in Data and Key as inputs and outputs a cipher, the second module uses the cypher from the first module and key from the testbench and decrypt the cypher to give back the original message.    
+   The first AES128 module takes in Data and Key as inputs and outputs a cipher, the second module uses the cypher from the first module and key from the testbench and decrypt the cypher to give back the original message.    
 		![image](https://user-images.githubusercontent.com/32319498/31142684-e1b2e09c-a82f-11e7-9741-ce0f1c4ce054.png)
 
-	
+## AES 128 RTL KERNEL
+   A kernel can be implemented in RTL and developed using the Vivado® IDE tool suite. RTL kernels offer potentially higher performance with lower area and power but require development using RTL coding, tools, and verification methodologies. The tool generates the basic template of AXI Read/write, FIFO Interface for the user, the user has to add custom logic to talk to this interface. 
