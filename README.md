@@ -27,14 +27,14 @@ Downlaod the design files from this link http://opencores.org/project,systemcaes
    ![image](https://user-images.githubusercontent.com/32319498/31147244-1b121048-a83e-11e7-83e6-a3f534f62ade.png)
 		
 # 2. RTL Kernel Wizard 		
-   1. Execute the following commands on your local machine for starting a new SDaccel project:
+1. Execute the following commands on your local machine for starting a new SDaccel project:
 ```
     $ mkdir crypto_core
     $ cd crypto_core                                      
     $ cp -r ~/Downlaod ./
     $ sdx_171
 ``` 
-    2. Once you open the SDAccel, navigate to the Xilinx option on the top left and select Create RTL Kernel.			
+2. Once you open the SDAccel, navigate to the Xilinx option on the top left and select Create RTL Kernel.			
 		
 		
 		
