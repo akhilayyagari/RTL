@@ -69,3 +69,9 @@ This project has one AXI Master port and four arguments associated with it, once
 
 8. This page gives a summary of the VLNV, software function prototype and hardware control registers created from options selected in the previous pages. The function prototype conveys what a kernel call would like if it was a C function.
 
+   ![image](https://user-images.githubusercontent.com/32319498/31149215-036fc132-a844-11e7-96fd-83bb64cef1db.png)  
+
+After clicking OK in the summary page, the example Vivado project opens. 
+
+# 3.Integrating DUT with the AXI, FIFO Interface
+The Vivado project generates AXI4 Lite, Full Interface, Read/ Write FIFO’s and the AXI VIP automatically for the user this can be viewed by expanding the hierarchy in the Source tab. 
