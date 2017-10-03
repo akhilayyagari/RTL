@@ -6,7 +6,8 @@ The steps for creating an RTL Kernel are:
 1. Summary of Design Overiew 
 2. Launching RTL Kernel Wizard.  
 3. Integrating the DUT with the AXI, FIFO Interface.
-4. Creating testbench. 
+4. Debug and Verification of RTL Kernel. 
+5. References
 
 This tutorial uses the aes128 crypto core example from the opensource. 
 
@@ -74,4 +75,20 @@ This project has one AXI Master port and four arguments associated with it, once
 After clicking OK in the summary page, the example Vivado project opens. 
 
 # 3.Integrating DUT with the AXI, FIFO Interface
-The Vivado project generates AXI4 Lite, Full Interface, Read/ Write FIFO’s and the AXI VIP automatically for the user this can be viewed by expanding the hierarchy in the Source tab. 
+The Vivado project generates AXI4 Interface, Read/ Write FIFO’s and AXI VIP automatically for the user this can be viewed by expanding the hierarchy in the Source tab. 
+
+   ![image](https://user-images.githubusercontent.com/32319498/31149404-abaf5682-a844-11e7-9e89-62af7aedf5ec.png)
+
+The vivado tool generates a Vadd Example which is instantiated in the inst_example_vadd_m00_axi along with AXI, FIFO modules. The User can instantiate the design at this hierarchy. Now the user has to develop the custom logic for handling the data between the Read/Write FIFO and DUT (Refer to Fig 2 for better understating of the design flow).Once you’re done hooking up the read/write FIFO, custom logic, and DUT the next step is verifying the design at the RTL level by using an AXI VIP. 
+
+# 4. Debug and Verification of RTL Kernel
+1. RTL kernels should be verified in their own test bench using advanced verification techniques including Verification components, randomization, and protocol checkers. The AXI Verification IP (AXI VIP) is available in the Vivado® IP catalog and can help with verification of AXI interfaces. The RTL kernel example designs contain an AXI VIP based test bench with sample
+stimulus files. 
+2. The hardware emulation flow should not be used for functional verification because it does not accurately represent the range of possible protocol signalling conditions that real AXI traffic in hardware may incur. Hardware emulation should be used to test the host code software integration or to view the interaction between multiple kernels.
+
+3. If you expand the simulation sources in the sources tab, you will see the AXI VIP module as sdx_kernel_wizard_0_exdes_tb_basic. The testbench should be changed depending upon the user specifications. This example needs initial data to be set in a memory so a slave memory model is used in the testbench, by using backdoor memory write it is filled with initial data. Now, the design and testbench are ready for simulation (increase the simulation time, default set to 1us). 
+
+
+
+# 5. Referneces
+1. https://www.xilinx.com/support/documentation/ip_documentation/axi_vip/v1_0/pg267-axi-vip.pdf
