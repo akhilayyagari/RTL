@@ -63,7 +63,9 @@ Specifies the name of the AXI Interface that the corresponding columns in the cu
 The argument name is used in the generated Verilog control register module as an output signal. Each argument is assigned an ID value. This ID value is used to access the argument from the host software. The ID value assignments can be found on the summary page
 of this wizard. To ensure maximum compatibility, the argument name follows the same identifier rules as the Kernel name.
 
+   ![image](https://user-images.githubusercontent.com/32319498/31148998-4a390d4a-a843-11e7-9d42-c791d78e6bdb.png)
 
+This project has one AXI Master port and four arguments associated with it, once selected click Next.
 
-This project has one AXI Master port and four arguments are associated with it, open select click Next.
+8. This page gives a summary of the VLNV, software function prototype and hardware control registers created from options selected in the previous pages. The function prototype conveys what a kernel call would like if it was a C function.
 
