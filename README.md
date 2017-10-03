@@ -36,5 +36,9 @@ Downlaod the design files from this link http://opencores.org/project,systemcaes
 ``` 
 2. Once you open the SDAccel, navigate to the Xilinx option on the top left and select Create RTL Kernel.			
 		
+   ![image](https://user-images.githubusercontent.com/32319498/31147872-f44e0834-a83f-11e7-9f65-250932176879.png)		
 		
-		
+3. Then you will be prompted with the Create RTL Kernel window, click next. 
+4. In the general settings window select the number of clocks the design needs.
+5. The scalar window asks for number of scalar arguments in the design.The scalar arguments are inputs which remain constant throught the design cycle, select respective number of scalar arguments
+
