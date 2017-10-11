@@ -71,15 +71,15 @@ After doing these steps, the hirearchy structure should look like this.
 1. RTL kernels should be verified in their own test bench using advanced verification techniques including Verification components, randomization, and protocol checkers. The AXI Verification IP (AXI VIP) is available in the Vivado® IP catalog and can help with verification of AXI interfaces. The RTL kernel example designs contain an AXI VIP based test bench with sample
 stimulus files. 
 2. The hardware emulation flow should not be used for functional verification because it does not accurately represent the range of possible protocol signalling conditions that real AXI traffic in hardware may incur. Hardware emulation should be used to test the host code software integration or to view the interaction between multiple kernels.
-## 4.1 VIP for RTL Kernel 
+## 4.1. VIP for RTL Kernel 
    If you expand the simulation sources in the sources tab, you will see the AXI VIP module as **sdx_kernel_wizard_0_exdes_tb_basic**. Xilinx has provided a basic framework for the testbench, if the user needs to have a more complex testbench it should be changed depending upon the user specifications(Please refer to the references for working with Xilinx AXI VIP). The repository contains a testbench file with the name sdx_kernel_wizard_0_exdes_tb_basic. Copy the contents of the file and paste in the file which shows in the source tab. 
 
+**NOTE : The mem_rd_addr and mem_wr_addr has to be changed(easy way of finding this is to simulate the design and note down the m00-wr_addr)**
 Click on the run simulation button in the flow navigator(Change the simualtion time to 1000ms, by default it will be set to 1us). The testbench has a scoreboard logic, it uses backdoor memory read API calls and verifies it with golden data.
 # 5. Generating XO file and packaging RTL kernel
  1. Click on the Generate RTL Kernal. This creates an Xxo file
  2. Go to Tools option and select Create and Pckage New IP.
- 3. Select Package your current project and click next, finish.
- 4. A new window will open "Package IP", go to review and package and select Package IP. This packages the your current project.
+ 3. Select Package your current project and click next, finish. A new window will open "Package IP", go to review and package and select Package IP. This packages the your current project.
  
 # 6. Referneces
 1. https://www.xilinx.com/support/documentation/ip_documentation/axi_vip/v1_0/pg267-axi-vip.pdf
