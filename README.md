@@ -63,7 +63,8 @@ Once the Vivado opens
 2.2 Copy this file contents and paste in the sdx_kernel_wizard_0_example_vadd.sv
 
 After doing these steps, the hirearchy structure should look like this.
- ![image](https://user-images.githubusercontent.com/32319498/31149404-abaf5682-a844-11e7-9e89-62af7aedf5ec.png)
+![hirearchy](https://user-images.githubusercontent.com/32319498/31472066-3ba660ac-aea1-11e7-831a-6b67a148cef3.PNG)
+
 
 
 # 4. Debug and Verification of RTL Kernel
