@@ -7,7 +7,9 @@ The steps for creating an RTL Kernel are:
 2. Launching RTL Kernel Wizard.  
 3. Integrating the DUT with the FIFO Interface.
 4. Debug and Verification of RTL Kernel. 
-5. References
+5. Generating XO file and packaging RTL kernel 
+6. Compiling the host application and the FPGA binary containing the RTL kernel 
+7. References
 
 This tutorial uses the aes128 crypto core example from the opensource.org  
 
@@ -82,5 +84,10 @@ Click on the run simulation button in the flow navigator(Change the simualtion t
  2. Go to Tools option and select Create and Pckage New IP.
  3. Select Package your current project and click next, finish. A new window will open "Package IP", go to review and package and select Package IP. This packages the your current project.
  
-# 6. Referneces
+# 6. Compiling the host application and the FPGA binary containing the RTL kernel 
+Go to the below link and follow from Step 3 .
+
+https://github.com/Xilinx/SDAccel_Examples/wiki/Run-your-first-SDAccel-program-on-AWS-F1
+
+# 7. Referneces
 1. https://www.xilinx.com/support/documentation/ip_documentation/axi_vip/v1_0/pg267-axi-vip.pdf
