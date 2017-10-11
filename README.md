@@ -9,7 +9,7 @@ The steps for creating an RTL Kernel are:
 4. Debug and Verification of RTL Kernel. 
 5. References
 
-This tutorial uses the aes128 crypto core example from the opensource. 
+This tutorial uses the aes128 crypto core example from the opensource.org  
 
 ## Design files 
 Downlaod the design files from this link http://opencores.org/project,systemcaes  
@@ -28,7 +28,7 @@ Downlaod the design files from this link http://opencores.org/project,systemcaes
    ![image](https://user-images.githubusercontent.com/32319498/31147244-1b121048-a83e-11e7-83e6-a3f534f62ade.png)
 		
 # 2. Launching RTL Kernel Wizard
-The RTL Kernel Wizard can be launched with two different methods: from the SDx™ Development Environment or from the Vivado® IDE. The SDx Development Environment provides a more seemless experience, but IP management is limited. The Vivado IDE is recommended if multiple kernels are going to be generated and allows for better re-entrant workflows
+The RTL Kernel Wizard can be launched with two different methods: from the SDx™ Development Environment or from the Vivado® IDE. The SDx Development Environment provides a more seemless experience, but IP management is limited. The Vivado IDE is recommended if multiple kernels are going to be generated and allows for better re-entrant workflows.
 1. Launch SDx Development Environment.
 2. Create Project (SDAccel Product Type).
 3. Click Xilinx > Create RTL Kernel....			
@@ -36,16 +36,16 @@ The RTL Kernel Wizard can be launched with two different methods: from the SDx�
 5. In the general settings window select the number of clocks the design needs and click next.
 6. The scalar window asks for number of scalar arguments in the design.Scalar arguments are used to pass control type of information to the kernels. Scalar arguments can not be read back from the host. 
 
-_This design doesn't have any constants, so we will keep the number of scalar arguments to default '1'and click next_.
+_This design doesn't have any constants as inputs, so we will keep the number of scalar arguments to default '1'and click next_.
 
-   ![image](https://user-images.githubusercontent.com/32319498/31148005-5f33d7f0-a840-11e7-8d35-e5e4137240e0.png)
+![image](https://user-images.githubusercontent.com/32319498/31148005-5f33d7f0-a840-11e7-8d35-e5e4137240e0.png
 
 
 7. Global memory is accessed by the kernel through AXI4 master interfaces. Each AXI4 interface operates independently of each other. Each AXI4 interface may be connected to one or more memory controllers to off chip memory such as DDR4. Global memory is primarily used to pass large data sets to and from the kernel from the host. It can also be used to pass data between kernels. 
 
-_This design has one AXI Master port and four arguments associated with it, once selected click Next_.
+_This current design uses one AXI Master port and four arguments associated with it, once selected click Next_.
 
-   ![image](https://user-images.githubusercontent.com/32319498/31148998-4a390d4a-a843-11e7-9d42-c791d78e6bdb.png)
+![image](https://user-images.githubusercontent.com/32319498/31148998-4a390d4a-a843-11e7-9d42-c791d78e6bdb.png)
 
 8. This page gives a summary of the VLNV, software function prototype and hardware control registers created from options selected in the previous pages. The function prototype conveys what a kernel call would like if it was a C function.
 
@@ -54,9 +54,10 @@ _This design has one AXI Master port and four arguments associated with it, once
 After clicking OK in the summary page, flow will be directed to Vivado. 
 
 # 3.Integrating DUT with FIFO Interface
- Xilinx has already developed the interface logic for the user. The user should integrate the DUT into the design.
+ Xilinx has already developed the interface logic for the user. The responsibility of the user is to integrate the DUT with the interface logic.
  
-### Steps for Integrating the DUT 
+### Steps for Integrating the DUT
+Once the Vivado opens
 1. Click the add files option in the source tab and import all aes128 verilog files.
 2.1 The repository contains a **sdx_kernel_wizard_0_example_vadd.sv** which contains the custom logic for interfacing with the FIFO.
 2.2 Copy this file contents and paste in the sdx_kernel_wizard_0_example_vadd.sv
