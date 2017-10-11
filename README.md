@@ -38,8 +38,7 @@ The RTL Kernel Wizard can be launched with two different methods: from the SDxâ„
 
 _This design doesn't have any constants as inputs, so we will keep the number of scalar arguments to default '1'and click next_.
 
-![image](https://user-images.githubusercontent.com/32319498/31148005-5f33d7f0-a840-11e7-8d35-e5e4137240e0.png
-
+![scalar](https://user-images.githubusercontent.com/32319498/31472131-aba90efe-aea1-11e7-9892-721ef5501b52.PNG)
 
 7. Global memory is accessed by the kernel through AXI4 master interfaces. Each AXI4 interface operates independently of each other. Each AXI4 interface may be connected to one or more memory controllers to off chip memory such as DDR4. Global memory is primarily used to pass large data sets to and from the kernel from the host. It can also be used to pass data between kernels. 
 
