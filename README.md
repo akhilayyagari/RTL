@@ -2,24 +2,24 @@
 
 This tutorial explains the procedure for creating a RTL Kernel using SDAccel Flow. 
 
-The steps for creating an RTL Kernel are:
-1. Summary of Design Overiew 
-2. Launching RTL Kernel Wizard.  
+Steps for creating a RTL Kernel are:
+1. Design Overiew 
+2. Launching the RTL Kernel Wizard.  
 3. Integrating the DUT with the FIFO Interface.
 4. Debug and Verification of RTL Kernel. 
 5. Generating XO file and packaging RTL kernel 
-6. Compiling the host application and the FPGA binary containing the RTL kernel 
+6. SDAccel program on AWS F1
 7. References
 
-This tutorial uses the aes128 crypto core example from the opensource.org  
+This tutorial uses aes128 crypto core example from the opensource.org  
 
 ## Design files 
 Downlaod the design files from this link http://opencores.org/project,systemcaes  
 
-# 1. Summary of Desing Overiew
+# 1. Desing Overiew
 
 ## AES128 Encrypter and Decrpyter design overivew
-   The first AES128 module takes in Data and Key as inputs and outputs a cipher, the second module uses the cypher from the first module and key from the testbench and decrypt the cypher to give back the original message.
+   The DUT is instantiated in the design two times. The first instance takes in data, key and generates a cipher. The second module uses the cypher, key and decrypt the cypher to give back the original message.
    
    ![image](https://user-images.githubusercontent.com/32319498/31142684-e1b2e09c-a82f-11e7-9741-ce0f1c4ce054.png)
 		
@@ -84,7 +84,7 @@ Click on the run simulation button in the flow navigator(Change the simualtion t
  2. Go to Tools option and select Create and Pckage New IP.
  3. Select Package your current project and click next, finish. A new window will open "Package IP", go to review and package and select Package IP. This packages the your current project.
  
-# 6. Compiling the host application and the FPGA binary containing the RTL kernel 
+# 6. SDAccel program on AWS F1
 Go to the below link and follow from Step 3 .
 
 https://github.com/Xilinx/SDAccel_Examples/wiki/Run-your-first-SDAccel-program-on-AWS-F1
