@@ -49,7 +49,8 @@ _This current design uses one AXI Master port and four arguments associated with
 
 8. This page gives a summary of the VLNV, software function prototype and hardware control registers created from options selected in the previous pages. The function prototype conveys what a kernel call would like if it was a C function.
 
-![image](https://user-images.githubusercontent.com/32319498/31149215-036fc132-a844-11e7-96fd-83bb64cef1db.png)  
+![master](https://user-images.githubusercontent.com/32319498/31472098-6c37e25e-aea1-11e7-8b4d-205ec9b5b115.PNG)
+
 
 After clicking OK in the summary page, flow will be directed to Vivado. 
 
