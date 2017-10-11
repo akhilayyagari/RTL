@@ -45,7 +45,7 @@ _This design doesn't have any constants as inputs, so we will keep the number of
 
 _This current design uses one AXI Master port and four arguments associated with it, once selected click Next_.
 
-![image](https://user-images.githubusercontent.com/32319498/31148998-4a390d4a-a843-11e7-9d42-c791d78e6bdb.png)
+![master_or](https://user-images.githubusercontent.com/32319498/31472114-83e8981c-aea1-11e7-9e60-959aa3c37392.PNG)
 
 8. This page gives a summary of the VLNV, software function prototype and hardware control registers created from options selected in the previous pages. The function prototype conveys what a kernel call would like if it was a C function.
 
