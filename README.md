@@ -25,7 +25,7 @@ Downlaod the design files from this link http://opencores.org/project,systemcaes
 ## AES128 Encrypter and Decrpyter RTL KERNEL
    A kernel can be implemented in RTL and developed using the Vivado® IDE tool suite. RTL kernels offer potentially higher performance with lower area and power but require development using RTL coding, tools, and verification methodologies. The tool generates the basic template of AXI Read/write, FIFO Interface for the user, the user has to add custom logic to talk to this interface. 
    
-   ![image](https://user-images.githubusercontent.com/32319498/31147244-1b121048-a83e-11e7-83e6-a3f534f62ade.png)
+![image](https://user-images.githubusercontent.com/32319498/31147244-1b121048-a83e-11e7-83e6-a3f534f62ade.png)
 		
 # 2. Launching RTL Kernel Wizard
 The RTL Kernel Wizard can be launched with two different methods: from the SDx™ Development Environment or from the Vivado® IDE. The SDx Development Environment provides a more seemless experience, but IP management is limited. The Vivado IDE is recommended if multiple kernels are going to be generated and allows for better re-entrant workflows.
@@ -49,7 +49,7 @@ _This current design uses one AXI Master port and four arguments associated with
 
 8. This page gives a summary of the VLNV, software function prototype and hardware control registers created from options selected in the previous pages. The function prototype conveys what a kernel call would like if it was a C function.
 
-   ![image](https://user-images.githubusercontent.com/32319498/31149215-036fc132-a844-11e7-96fd-83bb64cef1db.png)  
+![image](https://user-images.githubusercontent.com/32319498/31149215-036fc132-a844-11e7-96fd-83bb64cef1db.png)  
 
 After clicking OK in the summary page, flow will be directed to Vivado. 
 
@@ -63,7 +63,7 @@ Once the Vivado opens
 2.2 Copy this file contents and paste in the sdx_kernel_wizard_0_example_vadd.sv
 
 After doing these steps, the hirearchy structure should look like this.
-   ![image](https://user-images.githubusercontent.com/32319498/31149404-abaf5682-a844-11e7-9e89-62af7aedf5ec.png)
+ ![image](https://user-images.githubusercontent.com/32319498/31149404-abaf5682-a844-11e7-9e89-62af7aedf5ec.png)
 
 
 # 4. Debug and Verification of RTL Kernel
@@ -71,7 +71,7 @@ After doing these steps, the hirearchy structure should look like this.
 stimulus files. 
 2. The hardware emulation flow should not be used for functional verification because it does not accurately represent the range of possible protocol signalling conditions that real AXI traffic in hardware may incur. Hardware emulation should be used to test the host code software integration or to view the interaction between multiple kernels.
 ## 4.1 VIP for RTL Kernel 
-If you expand the simulation sources in the sources tab, you will see the AXI VIP module as **sdx_kernel_wizard_0_exdes_tb_basic**. Xilinx has provided a basic framework for the testbench, if the user needs to have a more complex testbench it should be changed depending upon the user specifications(Please refer to the references for working with Xilinx AXI VIP). The repository contains a testbench file with the name sdx_kernel_wizard_0_exdes_tb_basic. Copy the contents of the file and paste in the actual file. 
+   If you expand the simulation sources in the sources tab, you will see the AXI VIP module as **sdx_kernel_wizard_0_exdes_tb_basic**. Xilinx has provided a basic framework for the testbench, if the user needs to have a more complex testbench it should be changed depending upon the user specifications(Please refer to the references for working with Xilinx AXI VIP). The repository contains a testbench file with the name sdx_kernel_wizard_0_exdes_tb_basic. Copy the contents of the file and paste in the file which shows in the source tab. 
 
 Click on the run simulation button in the flow navigator(Change the simualtion time to 1000ms, by default it will be set to 1us). The testbench has a scoreboard logic, it uses backdoor memory read API calls and verifies it with golden data.
 
