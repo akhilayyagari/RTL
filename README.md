@@ -25,7 +25,7 @@ Downlaod the design files from this link http://opencores.org/project,systemcaes
 		
 
 ## AES128 Encrypter and Decrpyter RTL KERNEL
-   A kernel can be implemented in RTL and developed using the Vivado® IDE tool suite. RTL kernels offer potentially higher performance with lower area and power but require development using RTL coding, tools, and verification methodologies. The tool generates the basic template of AXI Read/write, FIFO Interface for the user, the user has to add custom logic to talk to this interface. 
+   A kernel can be implemented in RTL and developed using the Vivado® IDE tool suite. RTL kernels offer potentially higher performance with lower area and power but requires development using RTL coding, tools, and verification methodologies. The tool generates the basic template of AXI Read/write, FIFO Interface for the user, the user has to add custom logic to talk to this interface. 
    
 ![image](https://user-images.githubusercontent.com/32319498/31147244-1b121048-a83e-11e7-83e6-a3f534f62ade.png)
 		
@@ -61,7 +61,7 @@ After clicking OK in the summary page, flow will be directed to Vivado.
 ### Steps for Integrating the DUT
 Once the Vivado opens
 1. Click the add files option in the source tab and import all aes128 verilog files.
-2.1 The repository contains a **sdx_kernel_wizard_0_example_vadd.sv** which contains the custom logic for interfacing with the FIFO.
+2.1 The repository contains a **sdx_kernel_wizard_0_example_vadd.sv** which contains custom logic for interfacing with the FIFO.
 2.2 Copy this file contents and paste in the sdx_kernel_wizard_0_example_vadd.sv
 
 After doing these steps, the hirearchy structure should look like this.
@@ -70,22 +70,22 @@ After doing these steps, the hirearchy structure should look like this.
 
 
 # 4. Debug and Verification of RTL Kernel
-1. RTL kernels should be verified in their own test bench using advanced verification techniques including Verification components, randomization, and protocol checkers. The AXI Verification IP (AXI VIP) is available in the Vivado® IP catalog and can help with verification of AXI interfaces. The RTL kernel example designs contain an AXI VIP based test bench with sample
+1. RTL kernels should be verified in their own test bench using advanced verification techniques including Verification components, randomization, and protocol checkers. The AXI Verification IP (AXI VIP) is available in the Vivado® IP catalog and can help with verification of AXI interfaces. The Vadd RTL kernel example design contains an AXI VIP based test bench with sample
 stimulus files. 
 2. The hardware emulation flow should not be used for functional verification because it does not accurately represent the range of possible protocol signalling conditions that real AXI traffic in hardware may incur. Hardware emulation should be used to test the host code software integration or to view the interaction between multiple kernels.
 ## 4.1. VIP for RTL Kernel 
-   If you expand the simulation sources in the sources tab, you will see the AXI VIP module as **sdx_kernel_wizard_0_exdes_tb_basic**. Xilinx has provided a basic framework for the testbench, if the user needs to have a more complex testbench it should be changed depending upon the user specifications(Please refer to the references for working with Xilinx AXI VIP). The repository contains a testbench file with the name sdx_kernel_wizard_0_exdes_tb_basic. Copy the contents of the file and paste in the file which shows in the source tab. 
+   If you expand the simulation sources in the sources tab, you will see the AXI VIP module as **sdx_kernel_wizard_0_exdes_tb_basic**. Xilinx has provided a basic framework for the testbench. If the user needs to have a more complex testbench it should be changed depending upon user specifications(Please refer to the references for working with Xilinx AXI VIP). The repository contains a testbench file with the name sdx_kernel_wizard_0_exdes_tb_basic. Copy the contents of the file and paste it in the file in the source tab(sdx_kernel_wizard_0_exdes_tb_basic). 
 
 **NOTE : The mem_rd_addr and mem_wr_addr has to be changed(easy way of finding this is to simulate the design and note down the m00-wr_addr)**
 
-Click on the run simulation button in the flow navigator(Change the simualtion time to 1000ms, by default it will be set to 1us). The testbench has a scoreboard logic, it uses backdoor memory read API calls and verifies it with golden data.
+Click on the run simulation button in the flow navigator(Change the simualtion time to 1000ms, by default it will be set to 1us). The testbench has a scoreboard, it uses backdoor memory read API calls and verifies it with golden data.
 # 5. Generating XO file and packaging RTL kernel
- 1. Click on the Generate RTL Kernal. This creates an Xxo file
- 2. Go to Tools option and select Create and Pckage New IP.
- 3. Select Package your current project and click next, finish. A new window will open "Package IP", go to review and package and select Package IP. This packages the your current project.
+ 1. Click on the Generate RTL Kernel. This creates an Xo file
+ 2. Go to Tools option and select Create and Package New IP.
+ 3. Select _Package your current project_ and click next, finish. A new window will open _Package IP_, go to _review and package_ and select _Package IP_. This packages your current project.
  
 # 6. SDAccel program on AWS F1
-Go to the below link and follow from Step 3 .
+Go to link below and follow from Step 3 .
 
 https://github.com/Xilinx/SDAccel_Examples/wiki/Run-your-first-SDAccel-program-on-AWS-F1
 
