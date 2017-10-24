@@ -35,6 +35,7 @@ The RTL Kernel Wizard can be launched with two different methods: from the SDxâ„
 2. Create Project (SDAccel Product Type) with application Project.
 3. Click Xilinx > Create RTL Kernel....			
 4. Then you will be prompted with the Create RTL Kernel window, click next, click next, click next. 
+
 `_This design doesn't have any constants as inputs, so we will keep the number of scalar arguments to default '1'and click next_.`
 
 ![scalar](https://user-images.githubusercontent.com/32319498/31472131-aba90efe-aea1-11e7-9892-721ef5501b52.PNG)
