@@ -84,7 +84,13 @@ stimulus files.
 Click on the run simulation button in the flow navigator(Change the simualtion time to 1000ms, by default it will be set to 1us). The testbench has a scoreboard, it uses backdoor memory read API calls and verifies it with golden data.
 
 # 5. Generating XO file and packaging RTL kernel
-The final step in creating an SDx kernel is to package the generated vivado project into an xo file. In vivado, click on the `_**Generate RTL Kernel**_` button in the GUI to create the kernel. This will package the project as an IP, and then package the IP as a kernel xo file. The IP will be available in the directory <Kernel name>_v1_0. The xo ile wil be called <Kernel name>.xo. Import the kernel xo file into the SDx project to use the kernel in the SDx project.
+The final step in creating an SDx kernel is to package the generated vivado project into an xo file. 
+
+In vivado, click on the `_**Generate RTL Kernel**_` button in the GUI to create the kernel. 
+
+![image](https://user-images.githubusercontent.com/32319498/31957392-7ddac1dc-b8a3-11e7-9b56-8c8aaaf76226.png)
+
+This will package the project as an IP, and then package the IP as a kernel xo file. The IP will be available in the directory <Kernel name>_v1_0. The xo ile wil be called <Kernel name>.xo. Import the kernel xo file into the SDx project to use the kernel in the SDx project.
  
 # 6. SDAccel program on AWS F1
 Go to this [link](https://github.com/Xilinx/SDAccel_Examples/wiki/Run-your-first-SDAccel-program-on-AWS-F1) and follow from Step 3 .
