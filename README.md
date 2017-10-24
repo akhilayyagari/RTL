@@ -86,7 +86,7 @@ Click on the run simulation button in the flow navigator(Change the simualtion t
 # 5. Generating XO file and packaging RTL kernel
 The final step in creating an SDx kernel is to package the generated vivado project into an xo file. 
 
-In vivado, click on the `_**Generate RTL Kernel**_` button in the GUI to create the kernel. 
+In vivado, click on the `Generate RTL Kernel` button in the GUI to create the kernel. 
 
 ![image](https://user-images.githubusercontent.com/32319498/31957392-7ddac1dc-b8a3-11e7-9b56-8c8aaaf76226.png)
 
