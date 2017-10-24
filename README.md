@@ -14,7 +14,7 @@ Steps for creating a RTL Kernel are:
 This tutorial uses aes128 crypto core example from the opensource.org  
 
 ## Design files 
-Downlaod the design files from this link http://opencores.org/project,systemcaes  
+Downlaod the design files from this [link](http://opencores.org/project,systemcaes)  
 
 # 1. Desing Overiew
 
@@ -31,20 +31,17 @@ Downlaod the design files from this link http://opencores.org/project,systemcaes
 		
 # 2. Launching RTL Kernel Wizard
 The RTL Kernel Wizard can be launched with two different methods: from the SDx™ Development Environment or from the Vivado® IDE. The SDx Development Environment provides a more seemless experience, but IP management is limited. The Vivado IDE is recommended if multiple kernels are going to be generated and allows for better re-entrant workflows.
-1. Launch SDx Development Environment.
-2. Create Project (SDAccel Product Type).
+1. Launch SDx Development Environment(SDX 2017.1).
+2. Create Project (SDAccel Product Type) with application Project.
 3. Click Xilinx > Create RTL Kernel....			
-4. Then you will be prompted with the Create RTL Kernel window, click next. 
-5. In the general settings window select the number of clocks the design needs and click next.
-6. The scalar window asks for number of scalar arguments in the design.Scalar arguments are used to pass control type of information to the kernels. Scalar arguments can not be read back from the host. 
-
-_This design doesn't have any constants as inputs, so we will keep the number of scalar arguments to default '1'and click next_.
+4. Then you will be prompted with the Create RTL Kernel window, click next, click next, click next. 
+`_This design doesn't have any constants as inputs, so we will keep the number of scalar arguments to default '1'and click next_.`
 
 ![scalar](https://user-images.githubusercontent.com/32319498/31472131-aba90efe-aea1-11e7-9892-721ef5501b52.PNG)
 
 7. Global memory is accessed by the kernel through AXI4 master interfaces. Each AXI4 interface operates independently of each other. Each AXI4 interface may be connected to one or more memory controllers to off chip memory such as DDR4. Global memory is primarily used to pass large data sets to and from the kernel from the host. It can also be used to pass data between kernels. 
 
-_This current design uses one AXI Master port and four arguments associated with it, once selected click Next_.
+`_This current design uses one AXI Master port and four arguments associated with it, once selected click Next_.`
 
 ![master_or](https://user-images.githubusercontent.com/32319498/31472114-83e8981c-aea1-11e7-9e60-959aa3c37392.PNG)
 
@@ -60,9 +57,11 @@ After clicking OK in the summary page, flow will be directed to Vivado.
  
 ### Steps for Integrating the DUT
 Once the Vivado opens
-1. Click the add files option in the source tab and import all aes128 verilog files.
-2.1 The repository contains a **sdx_kernel_wizard_0_example_vadd.sv** which contains custom logic for interfacing with the FIFO.
-2.2 Copy this file contents and paste in the sdx_kernel_wizard_0_example_vadd.sv
+#### 1. Click the add files option in the source tab and import all aes128 verilog files.
+#### 2.1 The repository contains a **sdx_kernel_wizard_0_example_vadd.sv** which contains custom logic for interfacing with the FIFO.
+#### 2.2 Copy this file contents and paste in the sdx_kernel_wizard_0_example_vadd.sv
+#### 3.1 The repository contains a testbench file with the name **sdx_kernel_wizard_0_exdes_tb_basic**. 
+#### 3.2 Copy the contents of the file and paste it in the file in the source tab(sdx_kernel_wizard_0_exdes_tb_basic). 
 
 After doing these steps, the hirearchy structure should look like this.
 ![hirearchy](https://user-images.githubusercontent.com/32319498/31472066-3ba660ac-aea1-11e7-831a-6b67a148cef3.PNG)
@@ -74,11 +73,12 @@ After doing these steps, the hirearchy structure should look like this.
 stimulus files. 
 2. The hardware emulation flow should not be used for functional verification because it does not accurately represent the range of possible protocol signalling conditions that real AXI traffic in hardware may incur. Hardware emulation should be used to test the host code software integration or to view the interaction between multiple kernels.
 ## 4.1. VIP for RTL Kernel 
-   If you expand the simulation sources in the sources tab, you will see the AXI VIP module as **sdx_kernel_wizard_0_exdes_tb_basic**. Xilinx has provided a basic framework for the testbench. If the user needs to have a more complex testbench it should be changed depending upon user specifications(Please refer to the references for working with Xilinx AXI VIP). The repository contains a testbench file with the name sdx_kernel_wizard_0_exdes_tb_basic. Copy the contents of the file and paste it in the file in the source tab(sdx_kernel_wizard_0_exdes_tb_basic). 
+   If you expand the simulation sources in the sources tab, you will see the AXI VIP module as **sdx_kernel_wizard_0_exdes_tb_basic**. Xilinx has provided a basic framework for the testbench. If the user needs to have a more complex testbench it should be changed depending upon specifications(Please refer to the references for working with Xilinx AXI VIP). 
 
 **NOTE : The mem_rd_addr and mem_wr_addr has to be changed(easy way of finding this is to simulate the design and note down the m00-wr_addr)**
 
 Click on the run simulation button in the flow navigator(Change the simualtion time to 1000ms, by default it will be set to 1us). The testbench has a scoreboard, it uses backdoor memory read API calls and verifies it with golden data.
+
 # 5. Generating XO file and packaging RTL kernel
 The final step in creating an SDx kernel is to package the generated vivado project into an xo kernel file. In vivado, click on the Generetat RTL Kernel button in the GUI to create the kernel. This will package the project as an IP, and then package the IP as a kernel xo file. The IP will be available in the directory <Kernel name>_v1_0. The xo ile wil be called <Kernel name>.xo. Import the kernel xo file into the SDx project to use the kernel in the SDx project.
  
