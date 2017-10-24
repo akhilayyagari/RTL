@@ -16,6 +16,10 @@ This tutorial uses aes128 crypto core example from the opensource.org
 ## Design files 
 Downlaod the design files from this [link](http://opencores.org/project,systemcaes) 
 
+Hirearchy of the Design Files. We will be working on aes128lowarea design.
+
+![hierarchy](https://user-images.githubusercontent.com/32319498/31956578-abacabe6-b8a0-11e7-8dec-ab22b29898cf.PNG)
+
 # 1. Desing Overiew
 
 ## AES128 Encrypter and Decrpyter design overivew
@@ -53,20 +57,15 @@ After clicking OK in the summary page, flow will be directed to Vivado.
  
 ### Steps for Integrating the DUT
 Once the Vivado opens
-#### 1. Click the add files option in the source tab and import all aes128lowarea verilog files.
-
-![hierarchy](https://user-images.githubusercontent.com/32319498/31956578-abacabe6-b8a0-11e7-8dec-ab22b29898cf.PNG)
-
-#### 2.1 The repository contains a **sdx_kernel_wizard_0_example_vadd.sv** which contains custom logic for interfacing with the FIFO.
-#### 2.2 Copy this file contents and paste in the sdx_kernel_wizard_0_example_vadd.sv
-#### 3.1 The repository contains a testbench file with the name **sdx_kernel_wizard_0_exdes_tb_basic**. 
-#### 3.2 Copy the contents of the file and paste it in the file in the source tab(sdx_kernel_wizard_0_exdes_tb_basic). 
-
+1. Click the add files option in the source tab and import all aes128lowarea verilog files.
+2.1 The repository contains a **sdx_kernel_wizard_0_example_vadd.sv** which contains custom logic for interfacing with the FIFO.
+2.2 Copy this file contents and paste in the sdx_kernel_wizard_0_example_vadd.sv
+3.1 The repository contains a testbench file with the name **sdx_kernel_wizard_0_exdes_tb_basic**. 
+3.2 Copy the contents of the file and paste it in the file in the source tab(sdx_kernel_wizard_0_exdes_tb_basic). 
 
 After doing these steps, the hirearchy structure should look like this.
+
 ![hirearchy](https://user-images.githubusercontent.com/32319498/31472066-3ba660ac-aea1-11e7-831a-6b67a148cef3.PNG)
-
-
 
 # 4. Debug and Verification of RTL Kernel
 1. RTL kernels should be verified in their own test bench using advanced verification techniques including Verification components, randomization, and protocol checkers. The AXI Verification IP (AXI VIP) is available in the Vivado® IP catalog and can help with verification of AXI interfaces. The Vadd RTL kernel example design contains an AXI VIP based test bench with sample
