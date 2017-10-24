@@ -14,7 +14,7 @@ Steps for creating a RTL Kernel are:
 This tutorial uses aes128 crypto core example from the opensource.org  
 
 ## Design files 
-Downlaod the design files from this [link](http://opencores.org/project,systemcaes)  
+Downlaod the design files from this [link](http://opencores.org/project,systemcaes) 
 
 # 1. Desing Overiew
 
@@ -58,11 +58,15 @@ After clicking OK in the summary page, flow will be directed to Vivado.
  
 ### Steps for Integrating the DUT
 Once the Vivado opens
-#### 1. Click the add files option in the source tab and import all aes128 verilog files.
+#### 1. Click the add files option in the source tab and import all aes128lowarea verilog files.
+
+![hierarchy](https://user-images.githubusercontent.com/32319498/31956578-abacabe6-b8a0-11e7-8dec-ab22b29898cf.PNG)
+
 #### 2.1 The repository contains a **sdx_kernel_wizard_0_example_vadd.sv** which contains custom logic for interfacing with the FIFO.
 #### 2.2 Copy this file contents and paste in the sdx_kernel_wizard_0_example_vadd.sv
 #### 3.1 The repository contains a testbench file with the name **sdx_kernel_wizard_0_exdes_tb_basic**. 
 #### 3.2 Copy the contents of the file and paste it in the file in the source tab(sdx_kernel_wizard_0_exdes_tb_basic). 
+
 
 After doing these steps, the hirearchy structure should look like this.
 ![hirearchy](https://user-images.githubusercontent.com/32319498/31472066-3ba660ac-aea1-11e7-831a-6b67a148cef3.PNG)
