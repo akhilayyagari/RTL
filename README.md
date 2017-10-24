@@ -88,9 +88,8 @@ Click on the run simulation button in the flow navigator(Change the simualtion t
 The final step in creating an SDx kernel is to package the generated vivado project into an xo kernel file. In vivado, click on the Generetat RTL Kernel button in the GUI to create the kernel. This will package the project as an IP, and then package the IP as a kernel xo file. The IP will be available in the directory <Kernel name>_v1_0. The xo ile wil be called <Kernel name>.xo. Import the kernel xo file into the SDx project to use the kernel in the SDx project.
  
 # 6. SDAccel program on AWS F1
-Go to link below and follow from Step 3 .
+Go to this [link](https://github.com/Xilinx/SDAccel_Examples/wiki/Run-your-first-SDAccel-program-on-AWS-F1) and follow from Step 3 .
 
-https://github.com/Xilinx/SDAccel_Examples/wiki/Run-your-first-SDAccel-program-on-AWS-F1
 
 # 7. Referneces
-1. https://www.xilinx.com/support/documentation/ip_documentation/axi_vip/v1_0/pg267-axi-vip.pdf
+1. [AXI VIP UG267](https://www.xilinx.com/support/documentation/ip_documentation/axi_vip/v1_0/pg267-axi-vip.pdf)
