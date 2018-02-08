@@ -43,7 +43,7 @@ Today, we will use the aes128lowarea design and integrate it with the SDAccel Fl
 
 2. RTL Kernel Tutaoril
  
- 2.1 Launchong the RTL Kernel Wizard
+ 2.1 Launching the RTL Kernel Wizard
 	The RTL Kernel Wizard can be launched with two different methods: from the SDx™ Development Environment or from the Vivado® IDE. 	 The SDx Development Environment provides a more seemless experience, but IP management is limited. The Vivado IDE is recommended 	  if multiple kernels are going to be generated and allows for better re-entrant workflows.
 To launch the RTL Kernel Wizard from the SDx Development Environment, do the following
    1. Launch SDx Development Environment(SDX 2017.1).
@@ -73,4 +73,6 @@ This page gives a summary of the VLNV, software function prototype and hardware 
 
 5. Finalizing and Generating the Kernel from the RTL Wizard
 If the RTL Kernel Wizard was launched from SDx, after clicking OK, the example Vivado project opens
+
+2.2 Vivado - RTL Kernel 
 
