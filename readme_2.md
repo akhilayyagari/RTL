@@ -135,12 +135,15 @@ Lets dig deep into each of these interfaces
 The Exsisting kernel can have 2 different types of interfaces
 
 1. It can be a AXIMM Interface
+
 If the exsisting design has an AXIMM Interface he/she should still define the number of AXIMM interface in thw Wizard. 			Now, he/she should connect the design to the top level wrapper(care must be taken with the ap_done signal)
 
 2. It is not a AXIMM Interface
+
 If the exsisting design is not a AXIMM Interface then we can leverage the exsisting FIFO interface by writing a control 		logic which takes the data from the write FIFO, generates the control signals and give it to the DUT. 
 
 3. Testbench
+
 The Testbench has a memory
 		
 # 4. Integrating the AES128 Core with SDAccel Flow.
