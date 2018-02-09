@@ -81,13 +81,16 @@ If the RTL Kernel Wizard was launched from SDx, after clicking OK, the example V
 
 ## 2.2 Vivado - RTL Kernel 
 
-The Wizard generates an RTL which has an interface as shown below
-	1. One AXI4 Slave Lite Interface
-	2. One or more AXI4 FUll Interface
+The Wizard generates an RTL which has an interface of 
+
+   1. One AXI4 Slave Lite Interface
+   2. One or more AXI4 FUll Interface
 	
 ![image](https://user-images.githubusercontent.com/32319498/31147244-1b121048-a83e-11e7-83e6-a3f534f62ade.png)
 
-Along with this the wizard also provides us with a Testbench. Lets dig deep into each of these interfaces
+Along with this the wizard also provides us with a Testbench. 
+
+Lets dig deep into each of these interfaces
 
 ### 1. AXI4 Slave Lite Interface 
 
