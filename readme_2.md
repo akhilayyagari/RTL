@@ -103,14 +103,18 @@ Lets dig deep into each of these interfaces
 
 ### 2. AXIMM Interface
    The AXIMM Interface is coupled to two separate AXIMM bus
-	1. One which has only reads the data from the global memory 
-	2. One which only writes to the Global Memory.
+   
+1. One which has only reads the data from the global memory 
+
+2. One which only writes to the Global Memory.
+
 ### 3. Testbench
-	The Wizard generates a basic template which tests the vadd example. It contains a 
+ The Wizard generates a basic template which tests the vadd example. It contains a 
+
 ### 4. Operation of the Kernel 
    As shown in the above figure, the operation of the Kernel is divided into 7 steps.
    
-  1.The Host will start the kernel by writing into the control register throught the AXI4 Slave Lite Interface. Along with the c            control data it will also write Read/Write Address, Values of the Scalare arguments. 
+  1.The Host will start the kernel by writing into the control register throught the AXI4 Slave Lite Interface. Along with the control 		data it will also write Read/Write Address, Values of the Scalare arguments. 
   
   2. This Read/Write address are fed to the AXIMM Full Read and AXIMM Full write modules. 
   
@@ -131,18 +135,27 @@ The Exsisting kernel can have 2 different types of interfaces
 
 1. It can be a AXIMM Interface
 
-If the exsisting design has an AXIMM Interface he/she should still define the number of AXIMM interface in thw Wizard. 			Now, he/she should connect the design to the top level wrapper(care must be taken with the ap_done signal)
+   If the exsisting design has an AXIMM Interface he/she should still define the number of AXIMM interface in thw Wizard. 			Now, he/she should connect the design to the top level wrapper(care must be taken with the ap_done signal)
 
 2. It is not a AXIMM Interface
 
-If the exsisting design is not a AXIMM Interface then we can leverage the exsisting FIFO interface by writing a control 		logic which takes the data from the write FIFO, generates the control signals and give it to the DUT. 
+    If the exsisting design is not a AXIMM Interface then we can leverage the exsisting FIFO interface by writing a control 		logic which takes the data from the write FIFO, generates the control signals and give it to the DUT. 
 
 3. Testbench
 
 The Testbench has a memory
 		
 # 4. Integrating the AES128 Core with SDAccel Flow.
-	1. 
+
+1. Selection of % Scalar arguments and % Master Interfaces in the Wizard
+  This tutorial uses AES128 Core in two ways. It uses as an Encrypter and also as a Decrypter. The Encrypter module will take the data from the global memory and generates a cipher. The Decrypter module will use this cipher and generates the original data. In cases as these we only need one AXIMM Interface.
+   In the wizard set the 
+   	number of scalar arguments to '1' (NOTE) 
+	number of AXIMM interface to  '1' 
+   
+and click OK. The wizard generates the basic template with the specified inputs to it. For this tutorial xilinx has developed a custom logic which talk with FIFO's and generates the necessary control logic. Using this we feed the data to the DUT. 
+Please go to the github repository and open  "sdx_kernel_wizard_0_example_vadd.sv" file.  From Line 271 to 339 is the custom logic which handles the transactions.
+
 	
 # 5. Generating the XO File and Packaginig RTL Kernel 
 The final step in creating an SDx kernel is to package the generated vivado project into an xo file. 
