@@ -102,14 +102,15 @@ Lets dig deep into each of these interfaces
 	The Wizard generates a basic template which tests the vadd example. It contains a 
 ### 4. Operation of the Kernel 
    As shown in the above figure, the operation of the Kernel is divided into 7 steps.
-	1.The Host will start the kernel by writing into the control register throught the AXI4 Slave Lite Interface. Along with the c             control data it will also write Read/Write Address, Values of the Scalare arguments. 
-	2. This Read/Write address are fed to the AXIMM Full Read and AXIMM Full write modules. 
-	3. The AXIMM Read will read the data from the global memory and write it to the internal Read FIFO.
-	4. The VADD example has a control logic which monitors the FIFO full/empty signals.
-	5. The VADD module will read from the FIFO process the data and writes it to the Write FIFO.
-	6. Once the write FIFO has data, The AXIMM Write will write it back to the Global Memory.
-	7. Once the write is done, the kernel will assert a ap_done signal. 
-	8. The host will monitor this signal and when it is high, it reads the data from the global memory. 
+   
+  1.The Host will start the kernel by writing into the control register throught the AXI4 Slave Lite Interface. Along with the c            control data it will also write Read/Write Address, Values of the Scalare arguments. 
+  2. This Read/Write address are fed to the AXIMM Full Read and AXIMM Full write modules. 
+  3. The AXIMM Read will read the data from the global memory and write it to the internal Read FIFO.
+  4. The VADD example has a control logic which monitors the FIFO full/empty signals.
+  5. The VADD module will read from the FIFO process the data and writes it to the Write FIFO.
+  6. Once the write FIFO has data, The AXIMM Write will write it back to the Global Memory.
+  7. Once the write is done, the kernel will assert a ap_done signal. 
+  8. The host will monitor this signal and when it is high, it reads the data from the global memory. 
 
 # 3. Integration of your kernel with SDAccel Flow
 The Exsisting kernel can have 2 different types of interfaces
