@@ -25,8 +25,9 @@ The Hierarchy of the design files is as shown below.
  https://user-images.githubusercontent.com/32319498/31956578-abacabe6-b8a0-11e7-8dec-ab22b29898cf.PNG
 
 In This tutorail we will use the AES128 core two times
-	1. First we encrypt the Input data
-	2. Second we decrypt the same data and output it to the testbench
+
+1. First we encrypt the Input data
+2. Second we decrypt the same data and output it to the testbench
 
 ![image](https://user-images.githubusercontent.com/32319498/31142684-e1b2e09c-a82f-11e7-9741-ce0f1c4ce054.png)
 
