@@ -19,9 +19,10 @@ Thsi tutorial is divided into 5 Segments
 
 # 1. AES128 Design Overview
 Download the Design files from the this link https://opencores.org/project,systemcaes
-The Hierarchy of the design files is as follows. 
 
-[hierarchy](https://user-images.githubusercontent.com/32319498/31956578-abacabe6-b8a0-11e7-8dec-ab22b29898cf.PNG)
+The Hierarchy of the design files is as shown below. 
+
+ https://user-images.githubusercontent.com/32319498/31956578-abacabe6-b8a0-11e7-8dec-ab22b29898cf.PNG
 
 In This tutorail we will use the AES128 core two times
 	1. First we encrypt the Input data
