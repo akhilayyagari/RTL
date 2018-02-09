@@ -76,3 +76,51 @@ If the RTL Kernel Wizard was launched from SDx, after clicking OK, the example V
 
 2.2 Vivado - RTL Kernel 
 
+The Wizard generates an RTL which has an interface as shown below
+	1. One AXI4 Slave Lite Interface
+	2. One or more AXI4 FUll Interface
+	
+![image](https://user-images.githubusercontent.com/32319498/31147244-1b121048-a83e-11e7-83e6-a3f534f62ade.png)
+
+Along with this the wizard also provides us with a Testbench. Lets dig deep into each of these interfaces
+
+1. AXI4 Slave Lite Interface 
+
+2. AXIMM Interface
+	The AXIMM Interface is coupled to two separate AXIMM bus
+	1. One which has only reads the data from the global memory 
+	2. One which only writes to the Global Memory.
+3. Testbench
+	The Wizard generates a basic template which tests the vadd example. It contains a 
+4. Operation of the Kernel 
+	As shown in the above figure, the operation of the Kernel is divided into 7 steps.
+	1.The Host will start the kernel by writing into the control register throught the AXI4 Slave Lite Interface. Along with the control data it will also write Read/Write Address, Values of the Scalare arguments. 
+	2. This Read/Write address are fed to the AXIMM Full Read and AXIMM Full write modules. 
+	3. The AXIMM Read will read the data from the global memory and write it to the internal Read FIFO.
+	4. The VADD example has a control logic which monitors the FIFO full/empty signals.
+	5. The VADD module will read from the FIFO process the data and writes it to the Write FIFO.
+	6. Once the write FIFO has data, The AXIMM Write will write it back to the Global Memory.
+	7. Once the write is done, the kernel will assert a ap_done signal. 
+	8. The host will monitor this signal and when it is high, it reads the data from the global memory. 
+
+#3. Integration of your kernel with SDAccel Flow
+The Exsisting kernel can have 2 different types of interfaces
+	1. It can be a AXIMM Interface
+		If the exsisting design has an AXIMM Interface he/she should still define the number of AXIMM interface in thw Wizard. Now, he/she should connect the design to the top level wrapper(care must be taken with the ap_done signal)
+	2. It is not a AXIMM Interface
+		If the exsisting design is not a AXIMM Interface then we can leverage the exsisting FIFO interface by writing a control logic which takes the data from the write FIFO, generates the control signals and give it to the DUT. 
+	3. Testbench
+		The Testbench has a memory
+		
+4. Integrating the AES128 Core with SDAccel Flow.
+	1. 
+	
+5. Generating the XO File and Packaginig RTL Kernel 
+The final step in creating an SDx kernel is to package the generated vivado project into an xo file. 
+
+In vivado, click on the `Generate RTL Kernel` button in the GUI to create the kernel. 
+
+![image](https://user-images.githubusercontent.com/32319498/31957392-7ddac1dc-b8a3-11e7-9b56-8c8aaaf76226.png)
+
+This will package the project as an IP, and then package the IP as a kernel xo file. The IP will be available in the directory <Kernel name>_v1_0. The xo ile wil be called <Kernel name>.xo. Import the kernel xo file into the SDx project to use the kernel in the SDx project.
+ 
