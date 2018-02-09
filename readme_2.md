@@ -4,16 +4,27 @@ SDAccel RTL kernel tutorial explains the procedure for integrating an exsiting R
 
 Thsi tutorial is divided into 5 Segments
  1. AES128 Design Overiew 
+ 
  2. RTL Kernel Wizard 
-  2.1 Launching RTL kernel Wizard
-  2.2 What RTL gets generated
-     2.2.1 AXI4 Lite Slave Interface
-     2.2.2 AXIMM Interface
-     2.2.3 Testbench 
+
+ 2.1 Launching RTL kernel Wizard
+ 
+ 2.2 What RTL gets generated
+ 
+ 2.2.1 AXI4 Lite Slave Interface
+ 
+ 2.2.2 AXIMM Interface
+ 
+ 2.2.3 Testbench 
+ 
  3. Integrating Your Kernel with SDAccel Flow
-   3.1 Kernel with(out) AXIMM Interface
-   3.2 Testbench 
+ 
+ 3.1 Kernel with(out) AXIMM Interface
+ 
+ 3.2 Testbench 
+ 
  4. Integrating AES128 Core with the RTL Kernel Flow
+ 
  5. Generating XO file and packaging the RTL Kernel
 
 
