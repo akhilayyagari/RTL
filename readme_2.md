@@ -148,10 +148,16 @@ The Testbench has a memory
 # 4. Integrating the AES128 Core with SDAccel Flow.
 
 1. Selection of % Scalar arguments and % Master Interfaces in the Wizard
-  This tutorial uses AES128 Core in two ways. It uses as an Encrypter and also as a Decrypter. The Encrypter module will take the data from the global memory and generates a cipher. The Decrypter module will use this cipher and generates the original data. In cases as these we only need one AXIMM Interface.
-   In the wizard set the 
-   	number of scalar arguments to '1' (NOTE) 
-	number of AXIMM interface to  '1' 
+  
+  This tutorial uses AES128 Core in two ways. It uses as an Encrypter and also as a Decrypter. The Encrypter module will take the data from the global memory and generates a cipher. 
+  
+  The Decrypter module will use this cipher and generates the original data. In cases as these we only need one AXIMM Interface.
+  
+  In the wizard set the 
+  
+  number of scalar arguments to '1' (NOTE) 
+
+  number of AXIMM interface to  '1' 
    
 and click OK. The wizard generates the basic template with the specified inputs to it. For this tutorial xilinx has developed a custom logic which talk with FIFO's and generates the necessary control logic. Using this we feed the data to the DUT. 
 Please go to the github repository and open  "sdx_kernel_wizard_0_example_vadd.sv" file.  From Line 271 to 339 is the custom logic which handles the transactions.
