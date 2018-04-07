@@ -66,10 +66,16 @@ To launch the RTL Kernel Wizard from the SDx Development Environment, do the fol
   	RTL Kernel Wizard General Settings
 	
    1. Kernel Identification
+   	1.1 Name of the Kernel - sdx_kernel_wizard.
+	  This will be the name of the RTL IP. This name is also used in the host code.
+	1.2 Kernel vendor 
+	   Xilinx.com
    
    2. Kernel Options
+   	2.1 kernel Type - At present RTL and Block Design .A RTL kernel type consists of a Verilog RTL top level module with a Verilog control register module and a Verilog kernel example inside the top. Block Design kernel type also delivers a Verilog RTL top level module, but instead it instantiates an IP integrator Block Diagram inside of a verilog RTL top level module (see UG1023 for more information). This Lab uses RTL Kernel.
+   	
+   3. Clocking Options - RTL Kernel Supports 2 Clocking options
    
-   3. Clocking Options
 ####   2. Scalar Arguments 
    Scalar arguments are used to pass control type of information to the kernels. Scalar arguments can not be read back from the host. For each argument that is specified a corresponding control register is created to facilitate passing the argument from software to hardware.
 
@@ -78,7 +84,7 @@ Please refer to ug1023 Page 91 for more information
 #### 3. Global Memory 
    Global memory is accessed by the kernel through AXI4 master interfaces. Each AXI4 interface operates independently of each other. Each AXI4 interface can be connected to one or more memory controllers to off-chip memory such as DDR4. Global memory is primarily used to pass large data sets to and from the kernel from the host. It can also be used to pass data between kernels.
 
-Please refer to ug1023 Page 91 for more information
+Please refer to ug1023 for more information
 
 #### 4. Summary 
 This page gives a summary of the VLNV, software function prototype and hardware control registers created from options selected in the previous pages. The function prototype conveys what a kernel call would like if it was a C function. See the host code generated example of how to set the kernel arguments for the kernel call. The register map shows the relationship between host software ID, argument name, hardware register offset, type, and associated interface. Review this page to for correctness before proceeding to generating the kernel.
