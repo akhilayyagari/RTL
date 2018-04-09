@@ -101,24 +101,7 @@ The Wizard generates an RTL which has an interface of
 	
 ![image](https://user-images.githubusercontent.com/32319498/38528802-0426f8a0-3c16-11e8-9964-f525f0b254fa.png)
 
-
-Along with this the wizard also provides us with a Testbench. 
-
-Lets dig deep into each of these interfaces
-
-### 1. AXI4 Slave Lite Interface 
-
-### 2. AXIMM Interface
-   The AXIMM Interface is coupled to two separate AXIMM bus
-   
-1. One which has only reads the data from the global memory 
-
-2. One which only writes to the Global Memory.
-
-### 3. Testbench
- The Wizard generates a basic template which tests the vadd example. It contains a 
-
-### 4. Operation of the Kernel 
+### 1. Operation of the Kernel 
    As shown in the above figure, the operation of the Kernel is divided into 7 steps.
    
   1.The Host will start the kernel by writing into the control register throught the AXI4 Slave Lite Interface. Along with the control 		data it will also write Read/Write Address, Values of the Scalare arguments. 
