@@ -40,7 +40,8 @@ In This tutorail we will use the AES128 core two times
 1. First we encrypt the Input data
 2. Second we decrypt the same data and output it to the testbench
 
-![image](https://user-images.githubusercontent.com/32319498/31142684-e1b2e09c-a82f-11e7-9741-ce0f1c4ce054.png)
+![image](https://user-images.githubusercontent.com/32319498/38528802-0426f8a0-3c16-11e8-9964-f525f0b254fa.png)
+
 
  The Design files contain a Testbench which has a checker module to verify the input and output data.
 		
