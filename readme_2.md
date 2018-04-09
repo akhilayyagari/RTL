@@ -99,7 +99,8 @@ The Wizard generates an RTL which has an interface of
    1. One AXI4 Slave Lite Interface
    2. One or more AXI4 FUll Interface
 	
-![image](https://user-images.githubusercontent.com/32319498/38528802-0426f8a0-3c16-11e8-9964-f525f0b254fa.png)
+![image](https://user-images.githubusercontent.com/32319498/38528947-e14ac5a4-3c16-11e8-8ae9-eb2c7a9e8770.png)
+
 
 ### 1. Operation of the Kernel 
    As shown in the above figure, the operation of the Kernel is divided into 7 steps.
