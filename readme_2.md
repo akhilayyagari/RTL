@@ -40,7 +40,6 @@ In This tutorail we will use the AES128 core two times
 1. First we encrypt the Input data
 2. Second we decrypt the same data and output it to the testbench
 
-![image](https://user-images.githubusercontent.com/32319498/38528802-0426f8a0-3c16-11e8-9964-f525f0b254fa.png)
 
 
  The Design files contain a Testbench which has a checker module to verify the input and output data.
@@ -100,7 +99,8 @@ The Wizard generates an RTL which has an interface of
    1. One AXI4 Slave Lite Interface
    2. One or more AXI4 FUll Interface
 	
-![image](https://user-images.githubusercontent.com/32319498/31147244-1b121048-a83e-11e7-83e6-a3f534f62ade.png)
+![image](https://user-images.githubusercontent.com/32319498/38528802-0426f8a0-3c16-11e8-9964-f525f0b254fa.png)
+
 
 Along with this the wizard also provides us with a Testbench. 
 
