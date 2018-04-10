@@ -141,7 +141,8 @@ The custom IP can have 2 different types of interfaces
 and click OK. The wizard generates the basic template with the specified inputs to it. For this tutorial xilinx has developed a custom logic which talk with FIFO's and generates the necessary control logic. Using this we feed the data to the DUT. 
 Please go to the github repository and open  "sdx_kernel_wizard_0_example_vadd.sv" file.  From Line 271 to 339 is the custom logic which handles the transactions.
 
-	
+![image](https://user-images.githubusercontent.com/32319498/38529095-b8af1dba-3c17-11e8-9813-019fd7be2839.png)
+
 # 5. Generating the XO File and Packaginig RTL Kernel 
 The final step in creating an SDx kernel is to package the generated vivado project into an xo file. 
 
