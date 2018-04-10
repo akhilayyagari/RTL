@@ -10,19 +10,11 @@ Thsi tutorial is divided into 5 Segments
   	 2.1 Launching RTL kernel Wizard
 	 
 	 2.2 What RTL gets generated
- 	 	
-	   2.2.1 AXI4 Lite Slave Interface
- 	       
-	   2.2.2 AXIMM Interface
- 		
-	   2.2.3 Testbench 
- 
+
  3. Integrating Your Kernel with SDAccel Flow
  	  
 	  3.1 Kernel with(out) AXIMM Interface
  	 
-	  3.2 Testbench 
- 
  4. Integrating AES128 Core with the RTL Kernel Flow
  
  5. Generating XO file and packaging the RTL Kernel
@@ -122,20 +114,16 @@ The Wizard generates an RTL which has an interface of
   8. The host will monitor this signal and when it is high, it reads the data from the global memory. 
 
 # 3. Integration of your kernel with SDAccel Flow
-The Exsisting kernel can have 2 different types of interfaces
+The custom IP can have 2 different types of interfaces
 
-1. It can be a AXIMM Interface
+1. It can be have a AXIMM Interface
 
-   If the exsisting design has an AXIMM Interface he/she should still define the number of AXIMM interface in thw Wizard. 			Now, he/she should connect the design to the top level wrapper(care must be taken with the ap_done signal)
+   If the exsisting design has an AXIMM Interface, we still need to define the number of AXIMM interface in thw Wizard. 		
 
 2. It is not a AXIMM Interface
 
-    If the exsisting design is not a AXIMM Interface then we can leverage the exsisting FIFO interface by writing a control 		logic which takes the data from the write FIFO, generates the control signals and give it to the DUT. 
+    If the exsisting design is not a AXIMM Interface then we can leverage the exsisting FIFO interface by writing a control 		logic which takes the data from the write FIFO, generates the control signals and gives it to the DUT. 
 
-3. Testbench
-
-The Testbench has a memory
-		
 # 4. Integrating the AES128 Core with SDAccel Flow.
 
 1. Selection of % Scalar arguments and % Master Interfaces in the Wizard
