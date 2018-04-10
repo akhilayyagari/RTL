@@ -132,11 +132,7 @@ The custom IP can have 2 different types of interfaces
   1.1 - number of scalar arguments - 1  
   1.2 - Number of AXIMM interface  - 1 
   
-  This tutorial uses AES128 Core in two ways. It uses as an Encrypter and also as a Decrypter. 
-  
-  The Encrypter module will take the data from the global memory and generates a cipher. The Decrypter module will use this cipher and generates the original data. In cases as these we only need one AXIMM Interface.
-  
- As shown in the below figure replace the vADD module with the custom IP. In the github repository, you will be finding a file with the name "sdx_kernel_wizard_vadd", in this file from line 271 to 339 is the custom logic which handles the transactions.
+ As shown in the below figure replace the vADD module with the custom IP. In the repository, there is a file with the name "sdx_kernel_wizard_vadd.v", in this file from line 271 to 339 is the custom logic which handles the transactions.
 
 ![image](https://user-images.githubusercontent.com/32319498/38529095-b8af1dba-3c17-11e8-9813-019fd7be2839.png)
 
